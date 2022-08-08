@@ -12,11 +12,17 @@ import {
 } from 'recharts';
 
 function leftCustomTickFormatter(value) {
-  return value + 'k';
+  return value / 1000 + 'k';
 }
 
 function rightCustomTickFormatter(value) {
+  console.log(value)
   return '$' + value;
+}
+
+function xAxisTickFormatter(value) {
+  // const time = new Date(value).getHours() + ":" + new Date(value).getMinutes()
+  return value;
 }
 
 function App() {
@@ -40,7 +46,7 @@ function App() {
   useEffect(() => {
     let max = 0;
     for (const i in data) {
-      const sum = data[i].put + data[i].call;
+      const sum = data[i].put_volume + data[i].call_volume;
       if (sum > max) {
         max = sum;
       }
@@ -62,14 +68,17 @@ function App() {
         }}
       >
         <CartesianGrid stroke="#f5f5f5" />
-        <XAxis interval={2} dataKey="time" />
-        <YAxis yAxisId="left-axis" domain={[0, Math.ceil(leftMaxYAxis / 25) * 25]} tickFormatter={leftCustomTickFormatter} tickCount={6} />
-        <YAxis yAxisId="right-axis" orientation='right' domain={['dataMin-50', 'dataMax+20']} tickCount={6} tickFormatter={rightCustomTickFormatter} />
+        <XAxis interval={2} dataKey="tape_time" tickFormatter={xAxisTickFormatter} />
+
+        <YAxis yAxisId="left-axis" domain={[0, leftMaxYAxis && ((parseInt((leftMaxYAxis / 25).toString()[0]) + 1) * 25) * parseInt(1 + "0".repeat(leftMaxYAxis.toString().length - 2))]} tickFormatter={leftCustomTickFormatter} tickCount={6} />
+
+        <YAxis yAxisId="right-axis" orientation='right' domain={['auto', 'auto']} tickCount={6} tickFormatter={rightCustomTickFormatter} type="number" interval={0} />
         <Tooltip />
+
         <Legend />
-        <Bar dataKey="put" yAxisId="left-axis" barSize={20} stackId="a" fill="#413ea0" />
-        <Bar dataKey="call" barSize={20} yAxisId="left-axis" stackId="a" fill="#82ca9d" />
-        <Line type="monotone" yAxisId="right-axis" dataKey="underlyingPrice" stroke="#ff7300" />
+        <Bar dataKey="put_volume" yAxisId="left-axis" barSize={20} stackId="a" fill="#413ea0" />
+        <Bar dataKey="call_volume" barSize={20} yAxisId="left-axis" stackId="a" fill="#82ca9d" />
+        <Line type="monotone" yAxisId="right-axis" dataKey="underlying_price" stroke="#ff7300" />
 
       </ComposedChart>
     </div>
