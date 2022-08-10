@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+
+.dashboard{
+  padding: 16px;
+  background-color: #1a1b26;
+  color: #fff;
+}
+.dashboard .top-heading{
+  width: 900px;
+}
+.dashboard .top-heading svg{
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+}
+
+.dashboard .top-heading .overflow{
+  margin: 8px 0px;
+}
+.dashboard .top-heading .filter{
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard .top-heading .filter .top-heading-search {
+  position: relative;
+  width: auto;
+  display: inline-block;
+  
+}
+.dashboard .top-heading .filter .top-heading-search input{
+  border-radius: 50px;
+  padding:8px 20px;
+  text-align: center;
+  font-size: 25px;
+  width: 130px;
+}
+
+.dashboard .top-heading .filter .top-heading-search svg{
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+}
+.dashboard .top-heading .filter .postmarket-data span {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.dashboard .top-heading .filter .postmarket-data svg{
+  height: 12px; 
+  width: 12px;
+}
+
+.intraday-options-volume-tsla{
+  background-color: #202036;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.intraday-options-volume-tsla .title{
+  font-weight: 600;
+  color: #f33d4c;
+  margin-bottom: 0;
+}
+
+.intraday-options-volume-tsla .volume{
+  font-size: 12px;
+  margin-bottom: 0;
+}
