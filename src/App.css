@@ -1,60 +1,24 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.dashboard{
+.dashboard {
   padding: 16px;
-  background-color: #1a1b26;
   color: #fff;
 }
-.dashboard .top-heading{
-  width: 900px;
+
+.dashboard .top-heading {
+  max-width: 900px;
+  width: 100%;
 }
-.dashboard .top-heading svg{
+
+.dashboard .top-heading svg {
   height: 12px;
   width: 12px;
   margin-right: 4px;
 }
 
-.dashboard .top-heading .overflow{
+.dashboard .top-heading .overflow {
   margin: 8px 0px;
 }
-.dashboard .top-heading .filter{
+
+.dashboard .top-heading .filter {
   padding: 10px 0px;
   display: flex;
   align-items: center;
@@ -65,47 +29,74 @@
   position: relative;
   width: auto;
   display: inline-block;
-  
+
 }
-.dashboard .top-heading .filter .top-heading-search input{
+
+.dashboard .top-heading .filter .top-heading-search input {
   border-radius: 50px;
-  padding:8px 20px;
+  padding: 8px 20px;
   text-align: center;
   font-size: 25px;
   width: 130px;
 }
 
-.dashboard .top-heading .filter .top-heading-search svg{
+.dashboard .top-heading .filter .top-heading-search svg {
   position: absolute;
   top: 12px;
   right: 10px;
   height: 20px;
   width: 20px;
 }
+
 .dashboard .top-heading .filter .postmarket-data span {
   font-size: 12px;
   display: flex;
   align-items: center;
 }
-.dashboard .top-heading .filter .postmarket-data svg{
-  height: 12px; 
+
+.dashboard .top-heading .filter .postmarket-data svg {
+  height: 12px;
   width: 12px;
 }
 
-.intraday-options-volume-tsla{
+.intraday-options-volume-tsla {
   background-color: #202036;
   padding: 20px;
   border-radius: 10px;
   display: inline-block;
+  max-width: 900px;
+  width: 90%;
 }
 
-.intraday-options-volume-tsla .title{
+.intraday-options-volume-tsla .title {
   font-weight: 600;
   color: #f33d4c;
   margin-bottom: 0;
 }
 
-.intraday-options-volume-tsla .volume{
+.intraday-options-volume-tsla .volume {
   font-size: 12px;
   margin-bottom: 0;
+}
+
+
+
+.Table {
+  font-size: 1rem;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+  color: #fff;
+}
+
+.Table td,
+.Table th {
+  line-height: 2em;
+  padding: 0 0.75em;
+  border: 1px rgba(255, 255, 255, 0.75) solid;
+}
+
+.Table th {
+  padding: 0.75em 0.75em;
+  border-bottom-width: 2px;
 }
